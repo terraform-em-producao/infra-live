@@ -5,7 +5,7 @@ module "bucket_dados" {
 
   nome = "tep-dev-dados-${data.aws_caller_identity.atual.account_id}"
 
-  # Em dev, pode apagar com conteúdo e não guardamos histórico longo.
+  # Em dev, pode apagar com conteúdo e não guardamos histórico longo (7 dias).
   force_destroy                   = true
   expirar_versoes_antigas_em_dias = 7
 }
