@@ -13,9 +13,8 @@ envs/
 1. Abre PR. O GitHub Actions roda `fmt`, `validate`, `tflint` e `trivy` (sem credencial, em segundos).
 2. O Atlantis roda `plan` nos ambientes cujos arquivos mudaram e comenta o resultado.
 3. O Atlantis roda as policies (`policies` repo) contra o plan. Se falhar, só um dono pode liberar com `atlantis approve_policies`.
-4. Alguém **que não é o autor** aprova o PR.
-5. `atlantis apply -p dev` → confere → `atlantis apply -p prod` (prod depende de dev).
-6. Você faz o merge **depois** do apply. A `main` sempre reflete o que está aplicado.
+4. `atlantis apply -p dev` → confere → `atlantis apply -p prod` (prod depende de dev).
+5. Você faz o merge **depois** do apply. A `main` sempre reflete o que está aplicado.
 
 ## Por que diretórios e não workspaces?
 
