@@ -14,7 +14,7 @@ envs/
 2. O Atlantis roda `plan` nos ambientes cujos arquivos mudaram e comenta o resultado.
 3. O Atlantis roda as policies (`policies` repo) contra o plan. Se falhar, só um dono pode liberar com `atlantis approve_policies`.
 4. `atlantis apply -p dev` → confere → `atlantis apply -p prod` (prod depende de dev).
-5. Você faz o merge **depois** do apply. A `main` sempre reflete o que está aplicado.
+5. O Atlantis faz o merge sozinho quando todos os planos do PR foram aplicados (`automerge`). A `main` sempre reflete o que está aplicado.
 
 ## Por que diretórios e não workspaces?
 

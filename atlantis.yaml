@@ -1,4 +1,7 @@
 version: 3
+# Depois que todos os planos do PR forem aplicados, o Atlantis faz o merge.
+# Garante que a main sempre reflete o que está aplicado.
+automerge: true
 parallel_plan: true
 parallel_apply: false
 
