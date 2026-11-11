@@ -1,0 +1,20 @@
+version: 3
+parallel_plan: true
+parallel_apply: false
+
+projects:
+  - name: dev
+    dir: envs/dev
+    terraform_version: 1.17.1
+    autoplan:
+      enabled: true
+      when_modified: ["*.tf", ".terraform.lock.hcl"]
+
+  # prod só aplica depois que dev foi aplicado no mesmo PR.
+  - name: prod
+    dir: envs/prod
+    terraform_version: 1.17.1
+    depends_on: [dev]
+    autoplan:
+      enabled: true
+      when_modified: ["*.tf", ".terraform.lock.hcl"]
