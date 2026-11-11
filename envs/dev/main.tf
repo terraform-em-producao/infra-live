@@ -7,5 +7,5 @@ module "bucket_dados" {
 
   # Em dev, pode apagar com conteúdo e não guardamos histórico longo (7 dias).
   force_destroy                   = true
-  expirar_versoes_antigas_em_dias = 7
+  expirar_versoes_antigas_em_dias = 6
 }
